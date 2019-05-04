@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class RubyController : MonoBehaviour
 {
+    public float moveSpeed = 3.0f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // QualitySettings.vSyncCount = 0;
+        // Application.targetFrameRate = 10;
     }
 
     // Update is called once per frame
@@ -17,9 +20,9 @@ public class RubyController : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         Vector2 position = transform.position;
-        
-        position.x += 0.1f * horizontal;
-        position.y += 0.1f * vertical;
+
+        position.x += moveSpeed * horizontal * Time.deltaTime;
+        position.y += moveSpeed * vertical * Time.deltaTime;
 
         transform.position = position;
     }
