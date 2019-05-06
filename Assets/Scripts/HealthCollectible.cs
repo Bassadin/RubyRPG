@@ -8,8 +8,11 @@ public class HealthCollectible : MonoBehaviour
         RubyController controller = collision.GetComponent<RubyController>();
         if (controller != null)
         {
-            controller.ChangeHealth(healthValue);
-            Destroy(gameObject);
+            if (controller.health < controller.startHealth)
+            {
+                controller.ChangeHealth(healthValue);
+                Destroy(gameObject);
+            }
         }
     }
 }
