@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9027607004343389756}
   - component: {fileID: 210878425215458807}
   - component: {fileID: -6382220451856154796}
+  - component: {fileID: 6253482090209798472}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -148,3 +149,22 @@ MonoBehaviour:
   vertical: 0
   movementChangeTime: 3
   damageAmount: -1
+--- !u!95 &6253482090209798472
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5322341424000406743}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f6036688c4182594baf40aee438e87a0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
