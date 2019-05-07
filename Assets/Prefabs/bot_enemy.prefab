@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6221206928782712332}
   - component: {fileID: 9027607004343389756}
   - component: {fileID: 210878425215458807}
+  - component: {fileID: -6382220451856154796}
   m_Layer: 0
   m_Name: bot_enemy
   m_TagString: Untagged
@@ -131,3 +132,18 @@ PolygonCollider2D:
       - {x: -0.3671875, y: 1.296875}
       - {x: 0.3671875, y: 1.296875}
       - {x: 0.3671875, y: 0.0234375}
+--- !u!114 &-6382220451856154796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5322341424000406743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1894f629a68931b42a43f020991a6cd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  vertical: 0
+  movementChangeTime: 3

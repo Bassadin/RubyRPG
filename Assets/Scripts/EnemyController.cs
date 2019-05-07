@@ -2,9 +2,10 @@
 
 public class EnemyController : MonoBehaviour
 {
-    public float speed;
+    public float speed = 3.0f;
     public bool vertical;
     public float movementChangeTime = 3.0f;
+    public int damageAmount = -1;
 
     Rigidbody2D rigidbody2D;
     float movementTimer;
@@ -38,5 +39,14 @@ public class EnemyController : MonoBehaviour
         }
 
         rigidbody2D.MovePosition(position);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        RubyController player = collision.gameObject.GetComponent<RubyController>();
+        if (player != null)
+        {
+            player.ChangeHealth(-1);
+        }
     }
 }
