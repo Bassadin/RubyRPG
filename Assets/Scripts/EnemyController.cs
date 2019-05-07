@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     public int damageAmount = -1;
 
     Rigidbody2D rigidbody2D;
+    Animator animator;
     float movementTimer;
     int movementDirection = 1;
 
@@ -15,6 +16,7 @@ public class EnemyController : MonoBehaviour
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         movementTimer = movementChangeTime;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -32,13 +34,21 @@ public class EnemyController : MonoBehaviour
         if (vertical)
         {
             position.y += Time.deltaTime * speed * movementDirection;
+            SetMovementIntoAnimator(new Vector2(0, movementDirection));
         }
         else
         {
             position.x += Time.deltaTime * speed * movementDirection;
+            SetMovementIntoAnimator(new Vector2(movementDirection, 0));
         }
 
         rigidbody2D.MovePosition(position);
+    }
+
+    void SetMovementIntoAnimator(Vector2 movementVector)
+    {
+        animator.SetFloat("moveX", movementVector.x);
+        animator.SetFloat("moveY", movementVector.y);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
