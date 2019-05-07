@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 210878425215458807}
   - component: {fileID: -6382220451856154796}
   m_Layer: 0
-  m_Name: bot_enemy
+  m_Name: enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,3 +147,4 @@ MonoBehaviour:
   speed: 3
   vertical: 0
   movementChangeTime: 3
+  damageAmount: -1
