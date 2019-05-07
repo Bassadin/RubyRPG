@@ -10,8 +10,11 @@ public class RubyController : MonoBehaviour
 
     //Health
     public int startHealth = 5;
+    public float timeInvicible = 2.0f;
     public int health { get { return currentHealth; } }
     int currentHealth;
+    bool isInvincible;
+    float invincibleTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -32,10 +35,29 @@ public class RubyController : MonoBehaviour
         position.y += moveSpeed * vertical * Time.deltaTime;
 
         rigidbody2D.MovePosition(position);
+
+        if (isInvincible)
+        {
+            invincibleTimer -= Time.deltaTime;
+            if (invincibleTimer < 0)
+            {
+                isInvincible = false;
+            }
+        }
     }
 
     public void ChangeHealth(int amount)
     {
+        if (amount < 0)
+        {
+            if (isInvincible)
+            {
+                return;
+            }
+
+            isInvincible = true;
+            invincibleTimer = timeInvicible;
+        }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, startHealth);
         Debug.Log("Health: " + currentHealth + "/" + startHealth);
     }
