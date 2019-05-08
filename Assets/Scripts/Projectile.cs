@@ -4,14 +4,9 @@ public class Projectile : MonoBehaviour
 {
     Rigidbody2D rigidbody2D;
 
-    void Start()
+    void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
-    }
-
-    void Update()
-    {
-        
     }
 
     public void Launch(Vector2 direction, float force)
