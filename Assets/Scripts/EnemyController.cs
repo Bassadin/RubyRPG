@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     Animator animator;
     float movementTimer;
     int movementDirection = 1;
+    bool broken = true;
 
     void Start()
     {
@@ -21,6 +22,17 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+        if (!broken)
+        {
+            return;
+        }
+
+        ChangeMovementDirection();
+        MoveCharacter();
+    }
+
+    private void ChangeMovementDirection()
+    {
         movementTimer -= Time.deltaTime;
 
         if (movementTimer < 0)
@@ -28,7 +40,10 @@ public class EnemyController : MonoBehaviour
             movementDirection = -movementDirection;
             movementTimer = movementChangeTime;
         }
+    }
 
+    private void MoveCharacter()
+    {
         Vector2 position = rigidbody2D.position;
 
         if (vertical)
@@ -58,5 +73,11 @@ public class EnemyController : MonoBehaviour
         {
             player.ChangeHealth(-1);
         }
+    }
+
+    public void Fix()
+    {
+        broken = false;
+        rigidbody2D.simulated = false;
     }
 }
