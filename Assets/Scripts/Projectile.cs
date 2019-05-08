@@ -14,6 +14,14 @@ public class Projectile : MonoBehaviour
         rigidbody2D.AddForce(direction * force);
     }
 
+    private void Update()
+    {
+        if (transform.position.magnitude > 1000.0f) ;
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         EnemyController enemyController = collision.collider.GetComponent<EnemyController>();
