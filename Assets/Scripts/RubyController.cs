@@ -95,7 +95,7 @@ public class RubyController : MonoBehaviour
             invincibleTimer = timeInvicible;
         }
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, startHealth);
-        Debug.Log("Health: " + currentHealth + "/" + startHealth);
+        UIHealthBar.instance.SetValue(currentHealth / (float)startHealth);
     }
 
     void Launch()

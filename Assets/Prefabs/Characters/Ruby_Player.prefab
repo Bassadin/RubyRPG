@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4.5
   startHealth: 5
-  timeInvicible: 2
+  timeInvicible: 1
   projectilePrefab: {fileID: 4054069098752959839, guid: f24b884c8e32c4e47ab877bf7b5cff37,
     type: 3}
 --- !u!50 &1217344007256788357
