@@ -3,6 +3,7 @@
 public class Projectile : MonoBehaviour
 {
     Rigidbody2D rigidbody2D;
+    public ParticleSystem hitParticleEffect;
 
     void Awake()
     {
@@ -27,6 +28,7 @@ public class Projectile : MonoBehaviour
         EnemyController enemyController = collision.collider.GetComponent<EnemyController>();
         if (enemyController != null)
         {
+            Instantiate(hitParticleEffect, gameObject.transform.position, Quaternion.identity);
             enemyController.Fix();
         }
 
