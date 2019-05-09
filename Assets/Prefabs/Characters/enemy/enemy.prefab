@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!50 &9027607004343389756
 Rigidbody2D:
   serializedVersion: 4
@@ -182,17 +182,17 @@ PrefabInstance:
     - target: {fileID: 7728235681485381688, guid: 245c52c9cb37f6e4983f0bc3c9799044,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.007
+      value: -0.001
       objectReference: {fileID: 0}
     - target: {fileID: 7728235681485381688, guid: 245c52c9cb37f6e4983f0bc3c9799044,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.815
+      value: 1.645
       objectReference: {fileID: 0}
     - target: {fileID: 7728235681485381688, guid: 245c52c9cb37f6e4983f0bc3c9799044,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7728235681485381688, guid: 245c52c9cb37f6e4983f0bc3c9799044,
         type: 3}
@@ -238,6 +238,11 @@ PrefabInstance:
         type: 3}
       propertyPath: moveWithTransform
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728235681485381670, guid: 245c52c9cb37f6e4983f0bc3c9799044,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 245c52c9cb37f6e4983f0bc3c9799044, type: 3}
